@@ -3,24 +3,33 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
-$primary: #f0f0ec;
+$grey: #f0f0ec;
+$grey-dark: #cfcece;
 $secondary: #E0BE36;
 $white: #fff;
 $green: #73c8a9;
 $orange: #f26637;
 $navy: #373b44;
-$link-color: #583450;
+$link-color: #f26637;
 
 .bg-grey {
-  background: #e5e5e5;
+  background: $grey;
 }
 
 .bg-grey2 {
   background: #D8D7D7;
 }
 
+.bg-orange {
+  background: $orange;
+}
+
 .text--white {
   color: $white;
+}
+
+.text--orange {
+  color: $orange;
 }
 
 a {
@@ -32,6 +41,12 @@ a {
   }
 }
 
+.logo {
+  width: 100px;
+  padding-top: 10px;
+
+}
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -41,7 +56,6 @@ a {
 
 /* Space out content a bit */
 body {
-  padding-top: 60px;
   padding-bottom: 20px;
   position: relative;
 
@@ -59,11 +73,10 @@ body {
 .header {
   border-bottom: 1px solid #e5e5e5;
   margin-bottom: 0 !important;
-  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background: $primary;
+  background: $grey;
   z-index: 100;
 
   /* Make the masthead heading the same height as the navigation */
@@ -73,6 +86,10 @@ body {
     line-height: 40px;
     padding-bottom: 19px;
   }
+}
+
+.secondary-heading {
+  text-transform: uppercase;
 }
 
 /* Custom page footer */
@@ -104,38 +121,103 @@ body {
   }
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
+.icon--wrapper {
+  border: 5px solid $white;
+  height: 195px;
+  width: 195px;
+  border-radius: 50%;
+  position: relative;
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
 
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
+    &.watch {
+      margin-top: -57px;
+      margin-left: -37px;
+    }
 
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
+    &.mouse {
+      margin-top: -57px;
+      margin-left: -37px;
 
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
+    }
+
+    &.basket {
+      margin-top: -56px;
+      margin-left: -60px;
+    }
   }
 }
 
-// **************    Carousel Styling
+/* =============================================
 
+List Styles
+
+================================================ */
+.dividers--grey {
+  li {
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      right: 0;
+      height: 300px;
+      width: 5px;
+      background: $grey-dark;
+      top: 50%;
+      margin-top: -150px;
+    }
+
+    &:last-child:after {
+      width: 0;
+      height: 0;
+    }
+  }
+  border-right: 5px;
+}
+/* =============================================
+
+Banners
+
+================================================ */
+.bg--delivery {
+  background: url(/images/delivery.png);
+}
+
+.bg--orange-tree {
+  background: url(/images/hero--orange-tree.png);
+}
+
+.bg--delivery,
+.bg--orange-tree {
+  background-size: cover;
+}
+
+/* =============================================
+
+Carousel Styling
+
+================================================ */
 .carousel-control.right,
 .carousel-control.left {
   background-image: none !important;
 }
 
+.carousel-caption,
+.carousel-control {
+  text-shadow: none;
+}
+
+/* =============================================
+
+Layout
+
+================================================ */
+.float--center {
+  margin: auto;
+}
 /* =============================================
 
 Margin and Padding Styles
@@ -418,4 +500,41 @@ Margin and Padding Styles
 }
 .pln {
   padding-left: 0 !important;
+}
+
+/* =============================================
+
+Tablet Styles
+
+================================================ */
+
+@media screen and (min-width: 768px) {
+  body {
+    padding-top: 60px;
+  }
+  .logo {
+    width: initial;
+  }
+  .container {
+    max-width: 900px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+    position: fixed;
+  }
+
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
 }
