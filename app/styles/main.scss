@@ -7,7 +7,7 @@ $grey: #f0f0ec;
 $grey-dark: #cfcece;
 $secondary: #E0BE36;
 $white: #fff;
-$green: #73c8a9;
+$green: #2ABE6F;
 $orange: #f26637;
 $navy: #373b44;
 $link-color: #f26637;
@@ -24,6 +24,10 @@ $link-color: #f26637;
   background: $orange;
 }
 
+.bg-navy {
+  background: $navy;
+}
+
 .text--white {
   color: $white;
 }
@@ -38,6 +42,75 @@ a {
   &:hover {
     color: lighten($link-color, 10%);
     text-decoration: none;
+  }
+
+  &.primary-cta {
+    background: $green;
+    padding: 17px 25px 36px;
+    border-radius: 7px;
+    color: $white;
+    border: 1px solid lighten($green, 2%);
+    transition: all .5s ease;
+
+    &:hover {
+      background: lighten($green, 10%)
+    }
+  }
+}
+
+.links--white {
+  a {
+    color: $white;
+    transition: all .5s ease;
+
+    &:hover {
+      color: darken($white, 10%);
+    }
+  }
+}
+
+.hover-cover--wrapper {
+  position: relative;
+  display: block;
+  transition: all .5s ease;
+  img {
+    width: 100%;
+  }
+
+  .hover-cover--green {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left:0;
+    width: 100%;
+    background: lighten($green, 10%);
+    opacity: 0;
+    transition: all .5s ease;
+  }
+
+  .hover-cover--copy {
+    height: 0;
+    opacity: 0;
+    transition: all .7s ease;
+    color: $white;
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 100px;
+    font-size: 24px;
+  }
+
+  &:hover {
+    .hover-cover--green {
+      opacity: .3;
+    }
+    .hover-cover--copy {
+      height: 20px;
+      opacity: 1;
+      padding-top: 70px;
+    }
   }
 }
 
@@ -56,9 +129,7 @@ a {
 
 /* Space out content a bit */
 body {
-  padding-bottom: 20px;
   position: relative;
-
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -95,8 +166,6 @@ body {
 /* Custom page footer */
 .footer {
   padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
 }
 
 .container-narrow > hr {
@@ -536,5 +605,13 @@ Tablet Styles
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
+  }
+
+  a.primary-cta {
+      position: absolute;
+      top: 0;
+      padding: 32px 25px;
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
   }
 }
