@@ -58,6 +58,17 @@ a {
   }
 }
 
+a.btn--transparent {
+  border: 2px solid $white;
+  color: white;
+  transition: all .5s ease;
+
+  &:hover {
+    background: rgba(227, 228, 227, 0.35);
+    color: $white;
+  }
+}
+
 .links--white {
   a {
     color: $white;
@@ -83,7 +94,7 @@ a {
     bottom: 0;
     left:0;
     width: 100%;
-    background: lighten($green, 10%);
+    background: darken($green, 25%);
     opacity: 0;
     transition: all .5s ease;
   }
@@ -91,20 +102,20 @@ a {
   .hover-cover--copy {
     height: 0;
     opacity: 0;
-    transition: all .7s ease;
+    transition: all .5s ease;
     color: $white;
     position: absolute;
     top: 50px;
     width: 100%;
     font-weight: bold;
     text-align: center;
-    padding-top: 100px;
+    padding-top: 80px;
     font-size: 24px;
   }
 
   &:hover {
     .hover-cover--green {
-      opacity: .3;
+      opacity: .6;
     }
     .hover-cover--copy {
       height: 20px;
@@ -117,7 +128,10 @@ a {
 .logo {
   width: 100px;
   padding-top: 10px;
+}
 
+.logo--hero-img {
+  width: 400px;
 }
 
 .browsehappy {
@@ -208,7 +222,7 @@ body {
 
     &.mouse {
       margin-top: -57px;
-      margin-left: -37px;
+      margin-left: -31px;
 
     }
 
